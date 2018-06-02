@@ -1,7 +1,5 @@
 # Moka Bug Report
 
----
-
 ## 使用方法
 
 1. 在JIRA中导出csv
