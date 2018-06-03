@@ -18,13 +18,13 @@ class GaugeChart extends React.Component {
   convertBugsToState(bugs) {
     let totalCount = bugs.length;
     let doneCount = 0;
-    bugs.forEach(({ Status: status }) => {
-      if (status === 'Done') {
+    bugs.forEach(({ Status: status, Resolution: resolution }) => {
+      if (status === 'Done' || resolution === 'Done') {
         doneCount++;
       }
     });
 
-    return { donePercent: parseFloat(doneCount / totalCount).toFixed(1) };
+    return { donePercent: parseFloat(doneCount / totalCount * 100).toFixed(1) };
   }
 
   componentDidMount() {
